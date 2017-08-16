@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="边框图片语法：  border-image：&amp;lt;’ border-image-source ‘&amp;gt; || &amp;lt;’ border-image-slice ‘&amp;gt; [ / &amp;lt;’ border-image-width ‘&amp;gt; | / &amp;lt;’ border-image-width ‘&amp;gt;? / &amp;lt;’ border-image-outset ‘&amp;gt; ]? || &amp;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="css3学习(二)">
+<meta property="og:url" content="http://yoursite.com/2016/08/16/css3学习(二)/index.html">
+<meta property="og:site_name" content="Ulysses&#39;s Blog">
+<meta property="og:description" content="边框图片语法：  border-image：&amp;lt;’ border-image-source ‘&amp;gt; || &amp;lt;’ border-image-slice ‘&amp;gt; [ / &amp;lt;’ border-image-width ‘&amp;gt; | / &amp;lt;’ border-image-width ‘&amp;gt;? / &amp;lt;’ border-image-outset ‘&amp;gt; ]? || &amp;">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-08-16T14:22:08.181Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="css3学习(二)">
+<meta name="twitter:description" content="边框图片语法：  border-image：&amp;lt;’ border-image-source ‘&amp;gt; || &amp;lt;’ border-image-slice ‘&amp;gt; [ / &amp;lt;’ border-image-width ‘&amp;gt; | / &amp;lt;’ border-image-width ‘&amp;gt;? / &amp;lt;’ border-image-outset ‘&amp;gt; ]? || &amp;">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"right","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/08/16/css3学习(二)/"/>
+
+
+
+
+
+  <title>css3学习(二) | Ulysses's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Ulysses's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">写一些有趣的事</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/08/16/css3学习(二)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Ulysses">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ulysses's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">css3学习(二)</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-08-16T22:18:16+08:00">
+                2016-08-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="边框图片"><a href="#边框图片" class="headerlink" title="边框图片"></a>边框图片</h2><p><strong>语法：</strong></p>
+<blockquote>
+<p>border-image：&lt;’ border-image-source ‘&gt; || &lt;’ border-image-slice ‘&gt; [ / &lt;’ border-image-width ‘&gt; | / &lt;’ border-image-width ‘&gt;? / &lt;’ border-image-outset ‘&gt; ]? || &lt;’ border-image-repeat ‘&gt;<br>默认值：看每个独立属性<br>适用于：看每个独立属性<br>继承性：无<br>动画性：看每个独立属性<br>计算值：看每个独立属性</p>
+</blockquote>
+<p><strong>取值</strong></p>
+<blockquote>
+<p>&lt;’ border-image-source ‘&gt;： 设置或检索对象的边框是否用图像定义样式或图像来源路径。<br>&lt;’ border-image-slice ‘&gt;： 设置或检索对象的边框背景图的分割方式。<br>&lt;’ border-image-width ‘&gt;： 设置或检索对象的边框厚度。<br>&lt;’ border-image-outset ‘&gt;： 设置或检索对象的边框背景图的扩展。<br>&lt;’ border-image-repeat ‘&gt;： 设置或检索对象的边框图像的平铺方式。</p>
+</blockquote>
+<p><a href="边框.html">边框.html</a></p>
+<h2 id="背景图片"><a href="#背景图片" class="headerlink" title="背景图片"></a>背景图片</h2><h4 id="background-size-背景图片大小"><a href="#background-size-背景图片大小" class="headerlink" title="background-size 背景图片大小"></a>background-size 背景图片大小</h4><blockquote>
+<ol>
+<li><p>值可以是像素</p>
+</li>
+<li><p>也可以是百分比<br>缺点是会拉伸，变形失真</p>
+</li>
+<li><p>contain<br>让图片等比例缩放，只要宽度或者高度满足要求了，就不缩放了，会出现留白</p>
+</li>
+<li><p>cover<br>让图片等比例缩放，只要宽度并且高度都没有留白了，就停止渲染缩放，配合background-position居中对齐使用更佳</p>
+</li>
+</ol>
+</blockquote>
+<p><a href="盒子居中和全屏背景.html">盒子居中和全屏背景.html</a></p>
+<h4 id="background-clip-背景图片区域大小"><a href="#background-clip-背景图片区域大小" class="headerlink" title="background-clip 背景图片区域大小"></a>background-clip 背景图片区域大小</h4><ol>
+<li>border-box //默认值</li>
+<li>padding-box</li>
+<li>content-box</li>
+<li>text</li>
+</ol>
+<h4 id="background-origin-图片渲染原点-不是背景颜色的原点"><a href="#background-origin-图片渲染原点-不是背景颜色的原点" class="headerlink" title="background-origin 图片渲染原点(不是背景颜色的原点)"></a>background-origin 图片渲染原点(不是背景颜色的原点)</h4><ol>
+<li>border-box</li>
+<li>padding-box 默认值</li>
+<li>content-box<h4 id="多重背景"><a href="#多重背景" class="headerlink" title="多重背景"></a>多重背景</h4><em>background允许我们设置多个背景图片，需要”，”隔开，一般最后一个写背景颜色</em></li>
+</ol>
+<p><a href="双重背景.html">双重背景.html</a><br><a href="paopao.html">paopao.html</a></p>
+<h2 id="渐变"><a href="#渐变" class="headerlink" title="渐变"></a>渐变</h2><p><strong>渐变实质上还是一张图片</strong></p>
+<pre><code>background-img:linear-gradient(to right,red 30%,green 60%);
+</code></pre><p>理解范围，上述样式0-30%是纯红色不渐变的，30-60是红色渐变成绿色，60-100是纯绿色的</p>
+<p>渐变的两个要求</p>
+<ol>
+<li>颜色要改变</li>
+<li>渐变有范围（50-50是没范围的，50-60是有范围的）</li>
+</ol>
+<p>语法</p>
+<blockquote>
+<p><linear-gradient> = linear-gradient([ [ <angle> | to <side-or-corner> ] ,]? <color-stop>[, <color-stop>]+)</color-stop></color-stop></side-or-corner></angle></linear-gradient></p>
+<p><side-or-corner> = [left | right] || [top | bottom]</side-or-corner></p>
+<p><color-stop> = <color> [ <length> | <percentage> ]?</percentage></length></color></color-stop></p>
+</blockquote>
+<p>下述值用来表示渐变的方向，可以使用角度或者关键字来设置：</p>
+<blockquote>
+<p><angle>： 用角度值指定渐变的方向（或角度）。<br>to left： 设置渐变为从右到左。相当于: 270deg<br>to right： 设置渐变从左到右。相当于: 90deg<br>to top： 设置渐变从下到上。相当于: 0deg<br>to bottom： 设置渐变从上到下。相当于: 180deg。这是默认值，等同于留空不写。 <color-stop> 用于指定渐变的起止颜色：</color-stop></angle></p>
+<p><color>： 指定颜色。 </color></p>
+<p><length>： 用长度值指定起止色位置。不允许负值 </length></p>
+<p><percentage>： 用百分比指定起止色位置。</percentage></p>
+</blockquote>
+<h2 id="过渡"><a href="#过渡" class="headerlink" title="过渡"></a>过渡</h2><p>transition<br>谁的属性在变，就给谁加<br>要有时间差<br>要有属性差</p>
+<blockquote>
+<p>transition-property：性质1，属性2，属性3<br>指定过渡的属性，特殊值all，指定全部能够执行过渡的属性。</p>
+<p>transition-duration<br>指定过度的时间</p>
+<p>transition-timing-function<br>指定过渡的速度效果类型，默认ease</p>
+<p>连写<br><strong>持续时间写在延迟时间的前面</strong><br>transition:all 1s linear 2s;</p>
+</blockquote>
+<h2 id="2D转换"><a href="#2D转换" class="headerlink" title="2D转换"></a>2D转换</h2><h3 id="transform"><a href="#transform" class="headerlink" title="transform"></a>transform</h3><ol>
+<li>transform：可以有很多值</li>
+<li>transform不能写多个，写了会覆盖</li>
+</ol>
+<h4 id="scale缩放"><a href="#scale缩放" class="headerlink" title="scale缩放"></a>scale缩放</h4><p>两个值一样的时候</p>
+<h4 id="平移"><a href="#平移" class="headerlink" title="平移"></a>平移</h4><p>2d转换translate<br><em>相对于自己的位置移动，不会影响到其他的元素</em><br>translateX();<br>translateY();</p>
+<h4 id="旋转"><a href="#旋转" class="headerlink" title="旋转"></a>旋转</h4><h4 id="扭曲-skew"><a href="#扭曲-skew" class="headerlink" title="扭曲 skew"></a>扭曲 skew</h4><h3 id="transform-origin转换原点"><a href="#transform-origin转换原点" class="headerlink" title="transform-origin转换原点"></a>transform-origin转换原点</h3><h3 id="转换合写"><a href="#转换合写" class="headerlink" title="转换合写"></a>转换合写</h3><blockquote>
+<p>transform属性只能写一个，</p>
+<p>多个转换写在一个transform里面用空格隔开</p>
+<p>旋转会影响盒子的坐标轴（包括方向），一般把旋转效果放后面</p>
+<p>初始状态和结束状态最好一一对应</p>
+</blockquote>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/08/16/css3学习(一)/" rel="prev" title="css3 学习(一)">
+                css3 学习(一) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.jpg"
+               alt="Ulysses" />
+          <p class="site-author-name" itemprop="name">Ulysses</p>
+           
+              <p class="site-description motion-element" itemprop="description">山不辞土成其高；海不辞水成其深</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#边框图片"><span class="nav-number">1.</span> <span class="nav-text">边框图片</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#背景图片"><span class="nav-number">2.</span> <span class="nav-text">背景图片</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#background-size-背景图片大小"><span class="nav-number">2.0.1.</span> <span class="nav-text">background-size 背景图片大小</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#background-clip-背景图片区域大小"><span class="nav-number">2.0.2.</span> <span class="nav-text">background-clip 背景图片区域大小</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#background-origin-图片渲染原点-不是背景颜色的原点"><span class="nav-number">2.0.3.</span> <span class="nav-text">background-origin 图片渲染原点(不是背景颜色的原点)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#多重背景"><span class="nav-number">2.0.4.</span> <span class="nav-text">多重背景</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#渐变"><span class="nav-number">3.</span> <span class="nav-text">渐变</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#过渡"><span class="nav-number">4.</span> <span class="nav-text">过渡</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2D转换"><span class="nav-number">5.</span> <span class="nav-text">2D转换</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#transform"><span class="nav-number">5.1.</span> <span class="nav-text">transform</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#scale缩放"><span class="nav-number">5.1.1.</span> <span class="nav-text">scale缩放</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#平移"><span class="nav-number">5.1.2.</span> <span class="nav-text">平移</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#旋转"><span class="nav-number">5.1.3.</span> <span class="nav-text">旋转</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#扭曲-skew"><span class="nav-number">5.1.4.</span> <span class="nav-text">扭曲 skew</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#transform-origin转换原点"><span class="nav-number">5.2.</span> <span class="nav-text">transform-origin转换原点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#转换合写"><span class="nav-number">5.3.</span> <span class="nav-text">转换合写</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 &mdash; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Ulysses</span>
+
+  
+</div>
+
+
+  <div class="powered-by">
+    由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+  </div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">
+    主题 &mdash;
+    <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+      NexT.Pisces
+    </a>
+  </div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
